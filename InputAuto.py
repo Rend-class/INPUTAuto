@@ -4,11 +4,9 @@ import pyscreeze
 import os
 import pandas as pd
 
-os.chdir('E:\\InputAuto')
+os.chdir('/home/rend/Downloads/InputAuto/')
 df = pd.read_excel('dataset.xlsx')
-#Anchor for click
 anchor = ('anchor.png')
-
 print(r'''
  /$$$$$$ /$$   /$$ /$$$$$$$  /$$   /$$ /$$$$$$$$/$$$$$$              /$$              
 |_  $$_/| $$$ | $$| $$__  $$| $$  | $$|__  $$__/$$__  $$            | $$              
@@ -17,7 +15,7 @@ print(r'''
   | $$  | $$  $$$$| $$____/ | $$  | $$   | $$ | $$__  $$| $$  | $$  | $$    | $$  \ $$
   | $$  | $$\  $$$| $$      | $$  | $$   | $$ | $$  | $$| $$  | $$  | $$ /$$| $$  | $$
  /$$$$$$| $$ \  $$| $$      |  $$$$$$/   | $$ | $$  | $$|  $$$$$$/  |  $$$$/|  $$$$$$/
-|______/|__/  \__/|__/       \______/    |__/ |__/  |__/ \______/    \___/   \______/                                                                                                                                                                                                              
+|______/|__/  \__/|__/       \______/    |__/ |__/  |__/ \______/    \___/   \______/                                                                                                                                                                                                            
 ''')
 time.sleep(1)
 start = time.time()
@@ -369,23 +367,25 @@ def swing_second():
         pyautogui.press('enter')   
         time.sleep(1)
 def night_first():
-    #OG 1 23:00
+	#OG 1 23:00
     df = pd.read_excel('dataset.xlsx', sheet_name='OGOD')
-    keyboard.press_and_release('alt+tab')
+    pyautogui.keyDown('alt')
+    pyautogui.press('tab', 2)
+    pyautogui.keyUp('alt')
     time.sleep(1)
     pyautogui.locateOnScreen(anchor)
     pyautogui.moveTo(anchor)
     pyautogui.click()
     pyautogui.click()
-    pyautogui.press('tab', 6, interval=0.5)
-    pyautogui.press('enter')
+    pyautogui.press('tab', 6 , interval=0.2)
+    pyautogui.press('enter', interval=0.5)
     data_to_input = df.iloc[32:41, 2]
     for value in data_to_input:
         pyautogui.write(str(value)) 
         pyautogui.press('enter', interval=0.5)
         pyautogui.press('down', interval=0.5)
         pyautogui.press('enter', interval=0.5)   
-        time.sleep(0.5)
+        time.sleep(1)
     #OG 2 23:00
     df = pd.read_excel('dataset.xlsx', sheet_name='OGOD')
     time.sleep(1)
@@ -396,10 +396,10 @@ def night_first():
     data_to_input = df.iloc[32:41, 5]
     for value in data_to_input:
         pyautogui.write(str(value)) 
-        pyautogui.press('enter', interval=0.5)
-        pyautogui.press('down', interval=0.5)
-        pyautogui.press('enter', interval=0.5)   
-        time.sleep(0.5)
+        pyautogui.press('enter', interval=1)
+        pyautogui.press('down', interval=1)
+        pyautogui.press('enter', interval=1)   
+        time.sleep(1)
     #Prod P1 23:00
     df = pd.read_excel('dataset.xlsx', sheet_name='Fusion')
     time.sleep(1)
@@ -413,7 +413,7 @@ def night_first():
         pyautogui.press('enter', interval=0.5)
         pyautogui.press('down', interval=0.5)
         pyautogui.press('enter', interval=0.5)   
-        time.sleep(0.5)
+        time.sleep(1)
     #Prod 2 23:00
     df = pd.read_excel('dataset.xlsx', sheet_name='Fusion')
     time.sleep(1)
@@ -427,7 +427,7 @@ def night_first():
         pyautogui.press('enter', interval=0.5)
         pyautogui.press('down', interval=0.5)
         pyautogui.press('enter', interval=0.5)   
-        time.sleep(0.5)
+        time.sleep(1)
     #Warna P1 23:00
     time.sleep(1)
     pyautogui.press('tab', 7, interval=0.5)
@@ -440,7 +440,7 @@ def night_first():
         pyautogui.press('enter', interval=0.5)
         pyautogui.press('down', interval=0.5)
         pyautogui.press('enter', interval=0.5)   
-        time.sleep(0.5)
+        time.sleep(1)
     #Warna P2 23:00
     time.sleep(1)
     pyautogui.press('tab', 7, interval=0.5)
@@ -453,68 +453,71 @@ def night_first():
         pyautogui.press('enter', interval=0.5)
         pyautogui.press('down', interval=0.5)
         pyautogui.press('enter', interval=0.5)   
-        time.sleep(0.5)
+        time.sleep(1)
 def night_second():
     df = pd.read_excel('dataset.xlsx', sheet_name='Fusion')
-    keyboard.press_and_release('alt+tab')
+    pyautogui.keyDown('alt')
+    pyautogui.press('tab', 2)
+    pyautogui.keyUp('alt')
+    time.sleep(1)
+    pyautogui.locateOnScreen(anchor)
+    pyautogui.moveTo(anchor)
     pyautogui.click()
-    pyautogui.press('pagedown')
+    pyautogui.click()
+    pyautogui.press('tab', 8 , interval=0.2)
+    pyautogui.press('down', 8 , interval=0.2)
+    pyautogui.press('tab', 6 , interval=0.2)
+    pyautogui.press('down', 8 , interval=0.2)
+    pyautogui.press('tab', 2 , interval=0.2)
+    pyautogui.press('enter', interval=0.2)
     #Prod P1 03:00
     time.sleep(1)
-    pyautogui.locateOnScreen('p1prd3.png')
-    pyautogui.moveTo(p1prd3)
-    pyautogui.moveRel(0, 10)
-    pyautogui.click()
     data_to_input = df.iloc[29:49, 4]
     for value in data_to_input:
         pyautogui.write(str(value)) 
-        pyautogui.press('enter')
-        pyautogui.press('down')
-        pyautogui.press('enter')   
+        pyautogui.press('enter', interval=0.5)
+        pyautogui.press('down', interval=0.5)
+        pyautogui.press('enter', interval=0.5)   
         time.sleep(1)
     #Prod 2 03:00
-    pyautogui.press('enter')
-    pyautogui.moveRel(0, -40)
-    pyautogui.click()
-    pyautogui.press('down', presses=3)
     time.sleep(1)
-    pyautogui.locateOnScreen('p2prd3.png')
-    pyautogui.moveTo(p2prd3)
-    pyautogui.moveRel(0, 10)
-    pyautogui.click()
+    pyautogui.press('tab', 12, interval=0.5)
+    pyautogui.press('down', 18, interval=0.5)
+    pyautogui.press('tab', 2, interval=0.5)
+    pyautogui.press('enter', interval=0.5)
     data_to_input = df.iloc[29:49, 7]
     for value in data_to_input:
         pyautogui.write(str(value)) 
-        pyautogui.press('enter')
-        pyautogui.press('down')
-        pyautogui.press('enter')   
+        pyautogui.press('enter', interval=0.5)
+        pyautogui.press('down', interval=0.5)
+        pyautogui.press('enter', interval=0.5)   
         time.sleep(1)
     #Warna P1 03:00
-    pyautogui.press('pagedown')
     time.sleep(1)
-    pyautogui.locateOnScreen('p1wrn3.png')
-    pyautogui.moveTo(p1wrn3)
-    pyautogui.moveRel(0, 18)
-    pyautogui.click()
+    pyautogui.press('tab', 12, interval=0.5)
+    pyautogui.press('down', 18, interval=0.5)
+    pyautogui.press('tab', 19, interval=0.5)
+    pyautogui.press('enter', interval=0.5)
+    data_to_input = df.iloc[22:25, 15]
     data_to_input = df.iloc[22:26, 16]
     for value in data_to_input:
         pyautogui.write(str(value)) 
-        pyautogui.press('enter')
-        pyautogui.press('down')
-        pyautogui.press('enter')   
-        time.sleep(1)
+        pyautogui.press('enter', interval=0.5)
+        pyautogui.press('down', interval=0.5)
+        pyautogui.press('enter', interval=0.5)   
+        time.sleep(0.5)
     #Warna P2 03:00
     time.sleep(1)
-    pyautogui.locateOnScreen('p2wrn3.png')
-    pyautogui.moveTo(p2wrn3)
-    pyautogui.moveRel(0, 18)
-    pyautogui.click()
+    pyautogui.press('tab', 12, interval=0.5)
+    pyautogui.press('down', 2, interval=0.5)
+    pyautogui.press('tab', 2, interval=0.5)
+    pyautogui.press('enter', interval=0.5)
     data_to_input = df.iloc[28:32, 16]
     for value in data_to_input:
         pyautogui.write(str(value)) 
-        pyautogui.press('enter')
-        pyautogui.press('down')
-        pyautogui.press('enter')   
+        pyautogui.press('enter', interval=0.5)
+        pyautogui.press('down', interval=0.5)
+        pyautogui.press('enter', interval=0.5)   
         time.sleep(1)
 def blending():
     df = pd.read_excel('dataset.xlsx', sheet_name='Blending')
@@ -563,7 +566,7 @@ elif consent == '5':
     night_first()
 elif consent == '6':
     night_second()
-pyautogui.hotkey('alt','tab')
+pyautogui.hotkey('alt', 'tab')
 end = time.time()
 print('Program berjalan selama: ', int(end-start), 'detik')
 time.sleep(10)
