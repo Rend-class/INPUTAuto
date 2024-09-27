@@ -373,10 +373,12 @@ def night_first():
     df = pd.read_excel('dataset.xlsx', sheet_name='OGOD')
     keyboard.press_and_release('alt+tab')
     time.sleep(1)
-    pyautogui.locateOnScreen('p1og23.png')
-    pyautogui.moveTo(p1og23)
-    pyautogui.moveRel(0, 18)
+    pyautogui.locateOnScreen(anchor)
+    pyautogui.moveTo(anchor)
     pyautogui.click()
+    pyautogui.click()
+    pyautogui.press('tab', 6)
+    pyautogui.press('enter')
     data_to_input = df.iloc[32:41, 2]
     for value in data_to_input:
         pyautogui.write(str(value)) 
