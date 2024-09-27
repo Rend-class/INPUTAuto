@@ -389,10 +389,10 @@ def night_first():
     #OG 2 23:00
     df = pd.read_excel('dataset.xlsx', sheet_name='OGOD')
     time.sleep(1)
-    pyautogui.locateOnScreen('p2og23.png')
-    pyautogui.moveTo(p2og23)
-    pyautogui.moveRel(0, 18)
-    pyautogui.click()
+    pyautogui.press('tab', 8)
+    pyautogui.press('down', 8)
+    pyautogui.press('tab', 4)
+    pyautogui.press('enter')
     data_to_input = df.iloc[32:41, 5]
     for value in data_to_input:
         pyautogui.write(str(value)) 
@@ -403,10 +403,10 @@ def night_first():
     #Prod P1 23:00
     df = pd.read_excel('dataset.xlsx', sheet_name='Fusion')
     time.sleep(1)
-    pyautogui.locateOnScreen('p1prd23.png')
-    pyautogui.moveTo(p1prd23)
-    pyautogui.moveRel(0, 18)
-    pyautogui.click()
+    pyautogui.press('tab', 8)
+    pyautogui.press('down', 8)
+    pyautogui.press('tab', 7)
+    pyautogui.press('enter')
     data_to_input = df.iloc[29:48, 4]
     for value in data_to_input:
         pyautogui.write(str(value)) 
@@ -417,10 +417,10 @@ def night_first():
     #Prod 2 23:00
     df = pd.read_excel('dataset.xlsx', sheet_name='Fusion')
     time.sleep(1)
-    pyautogui.locateOnScreen('p2prd23.png')
-    pyautogui.moveTo(p2prd23)
-    pyautogui.moveRel(0, 18)
-    pyautogui.click()
+    pyautogui.press('tab', 7)
+    pyautogui.press('down', 18)
+    pyautogui.press('tab', 7)
+    pyautogui.press('enter')
     data_to_input = df.iloc[29:49, 7]
     for value in data_to_input:
         pyautogui.write(str(value)) 
@@ -429,12 +429,11 @@ def night_first():
         pyautogui.press('enter')   
         time.sleep(1)
     #Warna P1 23:00
-    pyautogui.press('pagedown', 2)
     time.sleep(1)
-    pyautogui.locateOnScreen('p1wrn23.png')
-    pyautogui.moveTo(p1wrn23)
-    pyautogui.moveRel(0, 18)
-    pyautogui.click()
+    pyautogui.press('tab', 7)
+    pyautogui.press('down', 18)
+    pyautogui.press('tab', 24)
+    pyautogui.press('enter')
     data_to_input = df.iloc[22:25, 15]
     for value in data_to_input:
         pyautogui.write(str(value)) 
@@ -444,10 +443,10 @@ def night_first():
         time.sleep(1)
     #Warna P2 23:00
     time.sleep(1)
-    pyautogui.locateOnScreen('p2wrn23.png')
-    pyautogui.moveTo(p2wrn23)
-    pyautogui.moveRel(0, 18)
-    pyautogui.click()
+    pyautogui.press('tab', 7)
+    pyautogui.press('down', 2)
+    pyautogui.press('tab', 7)
+    pyautogui.press('enter')
     data_to_input = df.iloc[28:31, 15]
     for value in data_to_input:
         pyautogui.write(str(value)) 
