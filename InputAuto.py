@@ -1,50 +1,14 @@
 import time
 import pyautogui
-import keyboard
 import pyscreeze
 import os
 import pandas as pd
 
 os.chdir('E:\\InputAuto')
 df = pd.read_excel('dataset.xlsx')
-#Plant 1
-p1og7 = ('p1og7.png')
-p1og15 = ('p1og15.png')
-p1og23 = ('p1og23.png')
-p1od1 = ('p1od1.png')
-p1od2 = ('p1od2.png')
-p1prd7 = ('p1prd7.png')
-p1prd11 = ('p1prd11.png')
-p1prd15 = ('p1prd15.png')
-p1prd19 = ('p1prd19.png')
-p1prd23 = ('p1prd23.png')
-p1prd3 = ('p1prd3.png')
-p1wrn3 = ('p1wrn3.png')
-p1wrn7 = ('p1wrn7.png')
-p1wrn11 = ('p1wrn11.png')
-p1wrn15 = ('p1wrn15.png')
-p1wrn19 = ('p1wrn19.png')
-p1wrn23 = ('p1wrn23.png')
-#Plant 2
-p2og7 = ('p2og7.png')
-p2og15 = ('p2og15.png')
-p2og23 = ('p2og23.png')
-p2od1 = ('p2od1.png')
-p2od2 = ('p2od2.png')
-p2prd7 = ('p2prd7.png')
-p2prd11 = ('p2prd11.png')
-p2prd15 = ('p2prd15.png')
-p2prd19 = ('p2prd19.png')
-p2prd23 = ('p2prd23.png')
-p2prd3 = ('p2prd3.png')
-p2wrn3 = ('p2wrn3.png')
-p2wrn7 = ('p2wrn7.png')
-p2wrn11 = ('p2wrn11.png')
-p2wrn15 = ('p2wrn15.png')
-p2wrn19 = ('p2wrn19.png')
-p2wrn23 = ('p2wrn23.png')
-bld2 = ('bld2.png')
-bld3 = ('bld3.png')
+#Anchor for click
+anchor = ('anchor.png')
+
 print(r'''
  /$$$$$$ /$$   /$$ /$$$$$$$  /$$   /$$ /$$$$$$$$/$$$$$$              /$$              
 |_  $$_/| $$$ | $$| $$__  $$| $$  | $$|__  $$__/$$__  $$            | $$              
@@ -53,24 +17,7 @@ print(r'''
   | $$  | $$  $$$$| $$____/ | $$  | $$   | $$ | $$__  $$| $$  | $$  | $$    | $$  \ $$
   | $$  | $$\  $$$| $$      | $$  | $$   | $$ | $$  | $$| $$  | $$  | $$ /$$| $$  | $$
  /$$$$$$| $$ \  $$| $$      |  $$$$$$/   | $$ | $$  | $$|  $$$$$$/  |  $$$$/|  $$$$$$/
-|______/|__/  \__/|__/       \______/    |__/ |__/  |__/ \______/    \___/   \______/ 
-            /$$                                                                       
-           | $$                                                                       
-           | $$$$$$$  /$$   /$$                                                       
-           | $$__  $$| $$  | $$                                                       
-           | $$  \ $$| $$  | $$                                                       
-           | $$  | $$| $$  | $$                                                       
-           | $$$$$$$/|  $$$$$$$                                                       
-           |_______/  \____  $$                                                       
-                      /$$  | $$                                                       
- /$$$$$$$            |  $$$$$$/      /$$ /$$                                          
-| $$__  $$            \______/      | $$|__/                                          
-| $$  \ $$  /$$$$$$  /$$$$$$$   /$$$$$$$ /$$                                          
-| $$$$$$$/ /$$__  $$| $$__  $$ /$$__  $$| $$                                          
-| $$__  $$| $$$$$$$$| $$  \ $$| $$  | $$| $$                                          
-| $$  \ $$| $$_____/| $$  | $$| $$  | $$| $$                                          
-| $$  | $$|  $$$$$$$| $$  | $$|  $$$$$$$| $$                                          
-|__/  |__/ \_______/|__/  |__/ \_______/|__/                                                                                                                                                                                                             
+|______/|__/  \__/|__/       \______/    |__/ |__/  |__/ \______/    \___/   \______/                                                                                                                                                                                                              
 ''')
 time.sleep(1)
 start = time.time()
